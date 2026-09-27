@@ -10,6 +10,16 @@
   <meta property="og:description" content="The plain-English VPN guide: three things a VPN does, five things it doesn't, and how to pick a provider without getting played.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://vpn-privacy-site.pages.dev/articles/vpn-explained-for-beginners.html">
+    <script>
+  /* Apply saved/auto theme before CSS paints to avoid a flash. */
+  try {
+    var t = localStorage.getItem('ppe-theme');
+    if (t !== 'dark' && t !== 'light') {
+      t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+  </script>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -231,6 +241,7 @@
     </div>
   </footer>
 
+  <script src="../assets/site.js" defer></script>
   <script>
     (function () {
       var toggle = document.getElementById('navToggle');
