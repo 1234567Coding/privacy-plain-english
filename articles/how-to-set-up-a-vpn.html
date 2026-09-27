@@ -10,6 +10,16 @@
   <meta property="og:description" content="The beginner VPN setup walkthrough: 5 steps, screenshots described at each one, and how to verify your tunnel actually works.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://vpn-privacy-site.pages.dev/articles/how-to-set-up-a-vpn.html">
+    <script>
+  /* Apply saved/auto theme before CSS paints to avoid a flash. */
+  try {
+    var t = localStorage.getItem('ppe-theme');
+    if (t !== 'dark' && t !== 'light') {
+      t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+  </script>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -204,6 +214,7 @@
     </div>
   </footer>
 
+  <script src="../assets/site.js" defer></script>
   <script>
     (function () {
       var toggle = document.getElementById('navToggle');
