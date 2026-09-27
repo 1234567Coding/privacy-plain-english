@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- MEDIVAVINE/JOURNEY: paste ad network script here -->
+  <title>VPNs Explained for Beginners: What They Do, What They Don't, and How to Choose One | Privacy Plain English</title>
+  <meta name="description" content="A calm, jargon-free explanation of what a VPN actually does, the five things it can't do, and the six criteria that matter when choosing a provider — written for absolute beginners.">
+  <meta property="og:title" content="VPNs Explained for Beginners: What They Do, What They Don't, and How to Choose One">
+  <meta property="og:description" content="The plain-English VPN guide: three things a VPN does, five things it doesn't, and how to pick a provider without getting played.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://vpn-privacy.pages.dev/articles/vpn-explained-for-beginners.html">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="Privacy Plain English — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" role="img" aria-label="Privacy Plain English logo: a shield with a keyhole">
+          <path d="M16 2 L28 7 V15 C28 23 22 28.5 16 30 C10 28.5 4 23 4 15 V7 Z" fill="#0e7c86"/>
+          <path d="M16 5 L25 9 V15 C25 21 20.5 25.5 16 27 C11.5 25.5 7 21 7 15 V9 Z" fill="#ffffff"/>
+          <circle cx="16" cy="14" r="3.5" fill="#0e7c86"/>
+          <rect x="14.7" y="16.5" width="2.6" height="6" rx="1" fill="#0e7c86"/>
+        </svg>
+        <span class="brand-name">Privacy Plain English<small>Privacy tools explained in plain English</small></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">☰ Menu</button>
+      <nav class="site-nav" id="primaryNav" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="vpn-explained-for-beginners.html">VPN Basics</a></li>
+          <li><a href="do-i-need-a-vpn.html">Do I Need One?</a></li>
+          <li><a href="free-vs-paid-vpns.html">Free vs Paid</a></li>
+          <li><a href="how-to-set-up-a-vpn.html">Setup Guide</a></li>
+          <li><a href="../disclosure.html">Disclosure</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">← Home</a></nav>
+      <article class="article-body">
+        <h1>VPNs Explained for Beginners: What They Do, What They Don't, and How to Choose One</h1>
+        <p class="byline">By <strong>the Privacy Plain English Team</strong> · September 8, 2026 · 9 min read</p>
+        <p class="affiliate-notice">Quick note on how we stay honest: this site may earn commissions from some VPN providers linked in our guides. It never affects what we recommend — <a href="../disclosure.html">read our full disclosure</a>.</p>
+
+        <p class="intro-hook">You've seen the ads. A stern voiceover warns that hackers are stealing your passwords <em>right now</em>, and only a VPN can save you. Then a different site tells you VPNs are a scam and you don't need one at all.</p>
+
+        <p>Both of those are trying to sell you something — one a subscription, the other a hot take. This guide is neither. It's the plain-English explanation of what a VPN actually does, where its limits are, and how to pick one without getting played. By the end, you'll know whether you need one, and if so, exactly what to look for. No jargon without a definition. No fear. Let's go.</p>
+
+        <h2>What a VPN Actually Does (the 2-Minute Version)</h2>
+
+        <p>Normally, when you visit a website, your internet provider (ISP) carries your traffic from your device to that site. That means two things are visible along the way:</p>
+
+        <ol>
+          <li><strong>Your ISP can see which sites you visit</strong> (the addresses, though usually not the page contents, which are scrambled by HTTPS).</li>
+          <li><strong>Every site you visit can see your IP address</strong> — a number that roughly reveals your location and identifies your connection.</li>
+        </ol>
+
+        <p>A VPN changes the route. Instead of going straight from your device to the website, your traffic first travels through an encrypted tunnel to a server run by the VPN company, and <em>then</em> out to the website. Think of it like mailing a letter inside a second, sealed envelope addressed to a forwarding service: anyone watching your mailbox sees a letter going to the forwarder, and the recipient sees a letter coming from the forwarder. Nobody in the middle sees both halves.</p>
+
+        <figure class="figure" role="img" aria-labelledby="vpn-diagram-caption">
+          <svg viewBox="0 0 600 200" aria-hidden="true">
+            <rect x="20" y="75" width="90" height="50" rx="8" fill="#e8f4f5" stroke="#0e7c86" stroke-width="2"/>
+            <text x="65" y="104" text-anchor="middle" font-size="14" fill="#1c2430" font-weight="bold">You</text>
+            <line x1="110" y1="100" x2="230" y2="100" stroke="#0e7c86" stroke-width="3"/>
+            <text x="170" y="90" text-anchor="middle" font-size="12" fill="#0a5a61">encrypted tunnel</text>
+            <rect x="230" y="75" width="120" height="50" rx="8" fill="#0e7c86"/>
+            <text x="290" y="104" text-anchor="middle" font-size="14" fill="#ffffff" font-weight="bold">VPN server</text>
+            <line x1="350" y1="100" x2="470" y2="100" stroke="#0e7c86" stroke-width="3" stroke-dasharray="6 4"/>
+            <text x="410" y="90" text-anchor="middle" font-size="12" fill="#4a5568">regular traffic</text>
+            <rect x="470" y="75" width="110" height="50" rx="8" fill="#e8f4f5" stroke="#0e7c86" stroke-width="2"/>
+            <text x="525" y="104" text-anchor="middle" font-size="14" fill="#1c2430" font-weight="bold">Website</text>
+            <text x="65" y="150" text-anchor="middle" font-size="11" fill="#4a5568">ISP sees: VPN only</text>
+            <text x="525" y="150" text-anchor="middle" font-size="11" fill="#4a5568">Site sees: VPN's IP</text>
+          </svg>
+          <figcaption id="vpn-diagram-caption">Without a VPN, your ISP sees your destinations and websites see your IP. A VPN puts an encrypted tunnel — and the VPN company's server — between you and everyone else.</figcaption>
+        </figure>
+
+        <p>Concretely, a VPN does three things:</p>
+
+        <ul>
+          <li><strong>Encrypts your traffic between your device and the VPN server.</strong> On public Wi-Fi — a hotel, an airport, a café — this stops anyone else on that network from snooping on what you're doing.</li>
+          <li><strong>Hides your real IP address from the websites you visit.</strong> They see the VPN server's IP instead, which also makes it look like you're browsing from wherever that server is located.</li>
+          <li><strong>Hides your browsing destinations from your ISP.</strong> Your provider sees only that you're connected to a VPN server, not which sites you visit afterward.</li>
+        </ul>
+
+        <p>That's the whole trick. It's genuinely useful — and it's also much narrower than the ads suggest. Which brings us to the part VPN companies hope you skip.</p>
+
+        <h2>What a VPN Does NOT Do (Read This Before You Buy)</h2>
+
+        <p><strong>It does not make you anonymous.</strong> This is the biggest myth in the niche. If you log into Gmail, Facebook, or Amazon while connected to a VPN, those companies know exactly who you are — your account identifies you, VPN or not. Anonymity online requires a whole system of habits (separate accounts, hardened browsers, discipline); a VPN is one tool, not a cloak of invisibility.</p>
+
+        <p><strong>It does not stop tracking cookies or fingerprinting.</strong> Advertisers track you mostly through cookies stored in your browser and "fingerprinting" (your device's unique combination of settings, fonts, and screen size). A VPN changes your IP address but touches none of that. If you want fewer creepy ads, you need browser-level defenses — tracker blockers, clearing cookies, privacy-focused browser settings — not just a VPN.</p>
+
+        <p><strong>It does not protect you from malware, phishing, or scams.</strong> A VPN encrypts your connection; it does nothing about the malicious attachment you just opened or the fake "your package is delayed" text asking for your credit card. Roughly speaking: a VPN protects data <em>in transit</em>, while antivirus and your own skepticism protect you from <em>bad content</em>. You need both kinds of protection, and they don't substitute for each other.</p>
+
+        <p><strong>It does not hide you from the VPN provider itself.</strong> This is the fine print nobody reads aloud. When you use a VPN, you're shifting your trust from your ISP to the VPN company — they can now see what your ISP used to see. That's why <em>who you choose</em> matters enormously, which we'll get to below.</p>
+
+        <p><strong>It doesn't make illegal activity legal, and it doesn't guarantee access to everything.</strong> Streaming services actively block known VPN servers, and no VPN changes the law where you live.</p>
+
+        <p>The honest summary: a VPN is a <em>connection privacy</em> tool. It controls who can see your traffic and where you appear to be. It is not an invisibility shield, an antivirus, or an ad blocker.</p>
+
+        <!-- AFFILIATE: If the reader is now thinking "okay, so when DO I need one?" — link forward to the "Do I Actually Need a VPN?" decision guide and the beginner buying guide. Intent is warming. -->
+
+        <h2>When You Actually Need One (and When You Don't)</h2>
+
+        <p>Let's make this practical with real scenarios.</p>
+
+        <p><strong>You probably want a VPN if:</strong></p>
+
+        <ul>
+          <li><strong>You regularly use public or semi-public Wi-Fi</strong> — hotels, airports, cafés, coworking spaces. This is the clearest-cut case. On an open network, unencrypted traffic can be intercepted by others on the same network. A VPN's encrypted tunnel closes that hole. If you travel even a few times a year, this alone justifies it.</li>
+          <li><strong>You don't want your ISP building a profile of your browsing.</strong> In many countries, ISPs can legally log and sell browsing data. A VPN moves that visibility to the VPN provider — which only helps if you picked a trustworthy one (more below).</li>
+          <li><strong>You want to access content from another region.</strong> A VPN server in another country makes streaming services and websites treat you as a local visitor. This is the most popular real-world use, though services fight back by blocking VPN IPs, so it doesn't always work.</li>
+          <li><strong>You work remotely on networks you don't control</strong> — or your employer requires one (many companies issue their own VPN; that's a separate thing from the commercial VPNs in this guide).</li>
+        </ul>
+
+        <p><strong>You probably don't need a VPN if:</strong></p>
+
+        <ul>
+          <li><strong>Your main worry is online banking or shopping.</strong> Those sites already use HTTPS encryption end-to-end. A VPN adds almost nothing on top for this specific threat.</li>
+          <li><strong>You only browse at home on your own secured Wi-Fi and don't care about ISP logging.</strong> Your home network, with a decent router password and WPA2/WPA3 encryption, is already reasonably private from neighbors and passersby.</li>
+          <li><strong>You think it will stop scams or viruses.</strong> It won't (see above). Spend that money and attention on a password manager and two-factor authentication instead — those protect beginners far more.</li>
+        </ul>
+
+        <p>The one-question test: <strong>do you regularly use internet connections you don't control, or do you want to limit what your ISP can see?</strong> Yes to either → a VPN is a reasonable purchase. No to both → you can safely skip it for now.</p>
+        <h2>How to Evaluate a VPN Provider: The 6 Things That Actually Matter</h2>
+
+        <p>VPN marketing is a swamp of meaningless superlatives ("military-grade encryption!" — nearly all of them use the same standard AES-256 encryption, so this tells you nothing). Ignore the adjectives. Check these six things instead:</p>
+
+        <p><strong>1. Logging policy — and whether it's been tested.</strong> Every provider claims "no logs." What matters is evidence: has the provider undergone an <em>independent audit</em> of its no-logs claim, and has it ever been compelled to hand over data it claimed not to have? Look for published audit reports from named, reputable firms — not a badge on the homepage, but an actual report you can read. A provider whose servers were once seized by authorities and yielded nothing has the strongest possible proof; a provider with only marketing copy has the weakest.</p>
+
+        <p><strong>2. Jurisdiction.</strong> Where the company is legally based determines which governments can compel it to log or hand over data. Privacy-friendly jurisdictions with no mandatory data-retention laws for VPNs (examples often cited include Panama, the British Virgin Islands, and Switzerland) are preferable to countries with aggressive surveillance alliances or data-retention mandates. This isn't about evading law enforcement — it's about minimizing the number of parties that can legally force logging.</p>
+
+        <p><strong>3. Independent security audits.</strong> Beyond logging audits, reputable providers commission third-party audits of their apps and infrastructure. Check the provider's site for audit reports dated within the last couple of years. No audits at all is a yellow flag; recent, published audits from known firms is a green flag.</p>
+
+        <p><strong>4. Modern protocols: WireGuard and OpenVPN.</strong> The "protocol" is the method your device uses to build the encrypted tunnel. <strong>WireGuard</strong> is the modern default — fast, with a small, auditable codebase. <strong>OpenVPN</strong> is the battle-tested veteran — slightly slower, extremely well scrutinized. Any provider worth considering offers both and lets you switch in the app's settings. Avoid providers pushing only a proprietary protocol with no independent review.</p>
+
+        <p><strong>5. A kill switch.</strong> This is a simple, critical feature: if the VPN connection drops, the kill switch blocks all internet traffic until the tunnel is re-established. Without it, a dropped connection silently exposes your real IP — the exact thing you bought the VPN to hide. It should be easy to find and turned on by default or one toggle away. Treat a missing kill switch as a dealbreaker.</p>
+
+        <p><strong>6. Leak protection and a trustworthy app.</strong> Your VPN should protect against DNS leaks (where address lookups bypass the tunnel) and IPv6 leaks. Reputable providers publish leak-test guidance and their apps handle this automatically. Also check: does the company publish transparency reports, run a bug-bounty program, and use RAM-only servers (servers that physically can't retain data after a reboot)? Each is a small positive signal; together they paint the picture.</p>
+
+        <p>What <em>doesn't</em> matter much: the raw number of servers or countries (beyond "enough for good speeds near you"), flashy speed-test claims on the provider's own site, and any "award" badge you can't trace to a real review.</p>
+
+        <!-- AFFILIATE: Comparison table or "providers that meet these criteria" box linking to the "Best VPNs for Beginners" buying guide with affiliate links. Frame as "providers that check the boxes above" — methodology-driven, no fabricated test scores. -->
+
+        <h2>Setting One Up: The 10-Minute Version</h2>
+
+        <p>This is genuinely easy — easier than assembling flat-pack furniture, and you only do it once.</p>
+
+        <ol>
+          <li><strong>Choose a provider using the criteria above</strong>, and sign up on its official website (never through a random "discount" link from an ad — phishing sites imitate VPN brands).</li>
+          <li><strong>Download the app from the provider's site or your device's official app store.</strong> Install it on your phone and computer; most subscriptions cover 5–10 simultaneous devices.</li>
+          <li><strong>Log in, and connect to the nearest server location.</strong> Closest = fastest. You don't need to overthink the server choice for everyday privacy.</li>
+          <li><strong>Turn on the kill switch</strong> in the app's settings. This is the single most important toggle.</li>
+          <li><strong>Set the protocol to WireGuard</strong> (or leave the default if the app picks it automatically — most good ones do).</li>
+          <li><strong>Verify it's working:</strong> with the VPN connected, visit a leak-test site (search "DNS leak test") and confirm the IP address and location shown match the VPN server, not your real location. Then disconnect and confirm it changes back.</li>
+        </ol>
+
+        <p>That's it. Day-to-day, you just open the app and hit connect — many apps offer auto-connect on untrusted Wi-Fi, which is worth enabling if you travel.</p>
+
+        <h2>Free vs. Paid: The Honest Math</h2>
+
+        <p>Running a VPN costs real money — servers in dozens of countries, bandwidth, engineers, audits. So when a VPN is free, ask where the money comes from. The answers, historically: selling user data, injecting ads, limiting you heavily to upsell a paid tier, or some combination. Several once-popular free VPNs have been caught doing exactly this.</p>
+
+        <p>There is one legitimate exception: <strong>freemium tiers from reputable paid providers</strong> — a limited free plan (capped data, fewer servers) offered as a trial funnel for the paid product. The business model is transparent: they hope you upgrade.</p>
+
+        <p>For most beginners, the math favors paying: a 1–2 year plan from a reputable provider typically works out to a few dollars a month — less than one streaming subscription. Given that the entire value of a VPN rests on trusting the provider, paying a company whose business model is <em>your subscription</em> rather than <em>your data</em> is the whole point.</p>
+
+        <!-- AFFILIATE: "Best Cheap VPNs That Are Still Trustworthy" — readers doing the cost math are at peak buying intent. Link to the budget buying guide. -->
+
+        <h2>FAQ</h2>
+
+        <dl class="faq">
+          <dt>Will a VPN slow down my internet?</dt>
+          <dd>Somewhat, yes — encryption and rerouting add overhead. With a modern protocol like WireGuard and a nearby server, the difference is usually 10–20%, which most people won't notice for browsing, streaming, or video calls. If speeds tank, switch servers or protocols before blaming the VPN concept.</dd>
+
+          <dt>Can I use a VPN on my phone and laptop at the same time?</dt>
+          <dd>Yes. Nearly all paid providers allow multiple simultaneous connections (typically 5–10 devices), and setup on phones is just installing the app and logging in.</dd>
+
+          <dt>Is using a VPN legal?</dt>
+          <dd>In most countries, yes — it's a legitimate privacy tool. A few countries restrict or ban VPN use; check local law if you travel to one. And a VPN doesn't make anything illegal legal.</dd>
+
+          <dt>Do I need a VPN if I only use it at home?</dt>
+          <dd>Only if you want to limit ISP visibility into your browsing or access region-locked content. For protection against hackers on your own secured home Wi-Fi, a VPN adds little — your router password and HTTPS are doing the real work there.</dd>
+
+          <dt>What's the difference between a VPN and antivirus?</dt>
+          <dd>They protect against completely different things. A VPN protects your <em>connection</em> (who can see your traffic). Antivirus protects your <em>device</em> (malicious files and programs). One doesn't replace the other.</dd>
+        </dl>
+
+        <h2>The Bottom Line</h2>
+
+        <p>A VPN is a narrow, useful tool: it encrypts your traffic to a server you choose, hides your IP from websites, and hides your destinations from your ISP. It doesn't make you anonymous, doesn't stop tracking or malware, and shifts your trust to the provider — so choose one with audited no-logs practices, a sane jurisdiction, modern protocols, and a kill switch. If you travel, use public Wi-Fi, or just don't love your ISP watching, it's one of the simplest privacy upgrades you can make in ten minutes. If none of those apply, your money is better spent on a password manager.</p>
+
+        <p>Start with <a href="do-i-need-a-vpn.html">the decision guide</a> if you're still unsure — and if you're ready to pick, read the <a href="best-vpn-for-travel.html">beginner travel buying guide</a> next, where every recommendation is scored against the criteria above.</p>
+
+        <div class="keep-reading">
+          <h2>Keep reading</h2>
+          <ul>
+            <li><a href="do-i-need-a-vpn.html">Do I Actually Need a VPN? An Honest Decision Guide</a></li>
+            <li><a href="free-vs-paid-vpns.html">Free VPNs vs. Paid VPNs: Where the Free Ones Make Their Money</a></li>
+            <li><a href="how-to-set-up-a-vpn.html">How to Set Up a VPN in 10 Minutes (With Pictures)</a></li>
+            <li><a href="best-vpn-for-travel.html">Best VPN for Travel: Hotel &amp; Airport Wi-Fi Safety</a></li>
+            <li><a href="vpn-myths-busted.html">7 VPN Myths Beginners Believe (Busted With Evidence)</a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="vpn-explained-for-beginners.html">VPN Explainer</a></li>
+            <li><a href="best-vpn-for-travel.html">Travel VPN Guide</a></li>
+            <li><a href="../disclosure.html">Affiliate Disclosure</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p class="footer-note">Privacy Plain English may earn commissions from some links on this site. It never affects what we recommend. Read our <a href="../disclosure.html">full disclosure</a>.</p>
+        </div>
+      </div>
+      <p class="footer-note">© 2026 Privacy Plain English. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var nav = document.getElementById('primaryNav');
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    })();
+  </script>
+</body>
+</html>
