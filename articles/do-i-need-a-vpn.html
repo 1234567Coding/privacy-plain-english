@@ -9,10 +9,11 @@
   <meta property="og:title" content="Do I Actually Need a VPN? An Honest Decision Guide">
   <meta property="og:description" content="We talk some readers OUT of buying. Four real use cases, four myths about needing one, and the one-question test.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://vpn-privacy.pages.dev/articles/do-i-need-a-vpn.html">
+  <meta property="og:url" content="https://vpn-privacy-site.pages.dev/articles/do-i-need-a-vpn.html">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="../index.html" aria-label="Privacy Plain English — home">
@@ -38,7 +39,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <div class="wrap">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">← Home</a></nav>
       <article class="article-body">
@@ -79,7 +80,7 @@
         <p>A VPN protects data <em>in transit</em>. Phishing is about <em>content</em> — a fake login page that looks exactly like your bank's, a text message about a "delayed package" with a link, an attachment that installs malware. The VPN happily encrypts your trip to the scammer's site. What actually protects you: a password manager (so you're not typing passwords into fake pages), two-factor authentication, and a healthy suspicion of urgent messages.</p>
 
         <h3>3. Hiding from Google, Facebook, or Amazon while logged in</h3>
-        <p>If you're signed into an account, that account identifies you — period. Your VPN can change your IP address all day; Google still knows you're you because you're logged into Gmail. The only way a VPN helps here is combined with logged-out browsing, tracker blockers, and separate browser profiles, and even then it's partial.</p>
+        <p>If you're signed into an account, that account identifies you — period. Your VPN can change your <a href="what-is-an-ip-address.html">IP address</a> all day; Google still knows you're you because you're logged into Gmail. The only way a VPN helps here is combined with logged-out browsing, tracker blockers, and separate browser profiles, and even then it's partial.</p>
 
         <h3>4. Making you anonymous</h3>
         <p>There is no consumer product that makes you anonymous online. Anonymity requires a system: hardened browsers, compartmentalized accounts, disciplined habits. A VPN is one ingredient, and on its own it provides <em>privacy from your ISP and local network</em> — not anonymity from the services you log into.</p>
@@ -158,10 +159,26 @@
     (function () {
       var toggle = document.getElementById('navToggle');
       var nav = document.getElementById('primaryNav');
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
+      function setOpen(open) {
+        nav.classList.toggle('open', open);
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      toggle.addEventListener('click', function () {
+        setOpen(!nav.classList.contains('open'));
+      });
+      // Close the menu after choosing a link (mobile) so readers land on content.
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          setOpen(false);
+        }
+      });
+      // Escape closes the open menu and returns focus to the toggle.
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          setOpen(false);
+          toggle.focus();
+        }
       });
     })();
   </script>
