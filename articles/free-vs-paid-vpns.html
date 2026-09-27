@@ -9,10 +9,11 @@
   <meta property="og:title" content="Free VPNs vs. Paid VPNs: Where the Free Ones Make Their Money">
   <meta property="og:description" content="Follow the money: data resale, ad injection, upsells — and the one kind of free VPN that's actually legit.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://vpn-privacy.pages.dev/articles/free-vs-paid-vpns.html">
+  <meta property="og:url" content="https://vpn-privacy-site.pages.dev/articles/free-vs-paid-vpns.html">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="../index.html" aria-label="Privacy Plain English — home">
@@ -38,7 +39,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <div class="wrap">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">← Home</a></nav>
       <article class="article-body">
@@ -90,7 +91,7 @@
 
         <h2>The Freemium Exception: When a Free Tier Is Legit</h2>
 
-        <p>There is one kind of free VPN we don't object to: <strong>a limited free tier from a reputable paid provider</strong>. Examples include Proton VPN's free plan and Windscribe's free tier — capped data (typically around 10GB/month), fewer server locations, sometimes slower speeds, funded transparently as a funnel toward the paid product.</p>
+        <p>There is one kind of free VPN we don't object to: <strong>a limited free tier from a reputable paid provider</strong>. The two standouts: Proton VPN's free plan — unlimited data (rare for a free tier), but limited to a handful of server locations at slower speeds — and Windscribe's free tier — more server locations but capped at 10GB/month. Both are funded transparently as a funnel toward the paid product.</p>
 
         <p>The business model is honest: they hope you like it and upgrade. The company has subscription revenue, published audits, and a reputation to protect. The free tier is limited enough that it can't be abused at scale, and the privacy policy is the same one paying customers get.</p>
 
@@ -173,10 +174,26 @@
     (function () {
       var toggle = document.getElementById('navToggle');
       var nav = document.getElementById('primaryNav');
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
+      function setOpen(open) {
+        nav.classList.toggle('open', open);
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      toggle.addEventListener('click', function () {
+        setOpen(!nav.classList.contains('open'));
+      });
+      // Close the menu after choosing a link (mobile) so readers land on content.
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          setOpen(false);
+        }
+      });
+      // Escape closes the open menu and returns focus to the toggle.
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          setOpen(false);
+          toggle.focus();
+        }
       });
     })();
   </script>
