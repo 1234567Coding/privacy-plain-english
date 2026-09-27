@@ -9,10 +9,11 @@
   <meta property="og:title" content="VPNs Explained for Beginners: What They Do, What They Don't, and How to Choose One">
   <meta property="og:description" content="The plain-English VPN guide: three things a VPN does, five things it doesn't, and how to pick a provider without getting played.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://vpn-privacy.pages.dev/articles/vpn-explained-for-beginners.html">
+  <meta property="og:url" content="https://vpn-privacy-site.pages.dev/articles/vpn-explained-for-beginners.html">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="../index.html" aria-label="Privacy Plain English — home">
@@ -38,7 +39,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <div class="wrap">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">← Home</a></nav>
       <article class="article-body">
@@ -56,7 +57,7 @@
 
         <ol>
           <li><strong>Your ISP can see which sites you visit</strong> (the addresses, though usually not the page contents, which are scrambled by HTTPS).</li>
-          <li><strong>Every site you visit can see your IP address</strong> — a number that roughly reveals your location and identifies your connection.</li>
+          <li><strong>Every site you visit can see your <a href="what-is-an-ip-address.html">IP address</a></strong> — a number that roughly reveals your location and identifies your connection.</li>
         </ol>
 
         <p>A VPN changes the route. Instead of going straight from your device to the website, your traffic first travels through an encrypted tunnel to a server run by the VPN company, and <em>then</em> out to the website. Think of it like mailing a letter inside a second, sealed envelope addressed to a forwarding service: anyone watching your mailbox sees a letter going to the forwarder, and the recipient sees a letter coming from the forwarder. Nobody in the middle sees both halves.</p>
@@ -234,10 +235,26 @@
     (function () {
       var toggle = document.getElementById('navToggle');
       var nav = document.getElementById('primaryNav');
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
+      function setOpen(open) {
+        nav.classList.toggle('open', open);
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      toggle.addEventListener('click', function () {
+        setOpen(!nav.classList.contains('open'));
+      });
+      // Close the menu after choosing a link (mobile) so readers land on content.
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          setOpen(false);
+        }
+      });
+      // Escape closes the open menu and returns focus to the toggle.
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          setOpen(false);
+          toggle.focus();
+        }
       });
     })();
   </script>
