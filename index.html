@@ -9,10 +9,11 @@
   <meta property="og:title" content="Privacy Plain English — Privacy tools explained in plain English">
   <meta property="og:description" content="Calm, jargon-free VPN and privacy guides for absolute beginners. We tell you when you don't need a VPN, so you can trust us when you do.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://vpn-privacy.pages.dev/">
+  <meta property="og:url" content="https://vpn-privacy-site.pages.dev/">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="Privacy Plain English — home">
@@ -38,7 +39,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap">
         <h1 id="hero-title">Privacy Plain English</h1>
@@ -126,6 +127,7 @@
         <div class="newsletter-card">
           <h2 id="newsletter-title">The Plain English Privacy Letter</h2>
           <p>One short, jargon-free privacy tip in your inbox each week — no scare tactics, ever.</p>
+          <p class="newsletter-soon">Launching soon — until then, <a href="articles/vpn-explained-for-beginners.html">the flagship explainer</a> is the best place to start.</p>
           <!-- NEWSLETTER: paste Beehiiv/Substack embed here -->
         </div>
       </div>
@@ -155,10 +157,26 @@
     (function () {
       var toggle = document.getElementById('navToggle');
       var nav = document.getElementById('primaryNav');
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
+      function setOpen(open) {
+        nav.classList.toggle('open', open);
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      toggle.addEventListener('click', function () {
+        setOpen(!nav.classList.contains('open'));
+      });
+      // Close the menu after choosing a link (mobile) so readers land on content.
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          setOpen(false);
+        }
+      });
+      // Escape closes the open menu and returns focus to the toggle.
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          setOpen(false);
+          toggle.focus();
+        }
       });
     })();
   </script>
