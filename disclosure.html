@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- MEDIVAVINE/JOURNEY: paste ad network script here -->
+  <title>Affiliate &amp; Advertising Disclosure | Privacy Plain English</title>
+  <meta name="description" content="Plain-English disclosure: how Privacy Plain English earns money through affiliate links and display ads, and why it never affects our recommendations.">
+  <meta property="og:title" content="Affiliate &amp; Advertising Disclosure | Privacy Plain English">
+  <meta property="og:description" content="How this site earns money — affiliate commissions and display ads — in plain English.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vpn-privacy.pages.dev/disclosure.html">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Privacy Plain English — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" role="img" aria-label="Privacy Plain English logo: a shield with a keyhole">
+          <path d="M16 2 L28 7 V15 C28 23 22 28.5 16 30 C10 28.5 4 23 4 15 V7 Z" fill="#0e7c86"/>
+          <path d="M16 5 L25 9 V15 C25 21 20.5 25.5 16 27 C11.5 25.5 7 21 7 15 V9 Z" fill="#ffffff"/>
+          <circle cx="16" cy="14" r="3.5" fill="#0e7c86"/>
+          <rect x="14.7" y="16.5" width="2.6" height="6" rx="1" fill="#0e7c86"/>
+        </svg>
+        <span class="brand-name">Privacy Plain English<small>Privacy tools explained in plain English</small></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">☰ Menu</button>
+      <nav class="site-nav" id="primaryNav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles/vpn-explained-for-beginners.html">VPN Basics</a></li>
+          <li><a href="articles/do-i-need-a-vpn.html">Do I Need One?</a></li>
+          <li><a href="articles/free-vs-paid-vpns.html">Free vs Paid</a></li>
+          <li><a href="articles/how-to-set-up-a-vpn.html">Setup Guide</a></li>
+          <li><a href="disclosure.html">Disclosure</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">← Home</a></nav>
+      <article class="article-body">
+        <h1>Affiliate &amp; Advertising Disclosure</h1>
+        <p class="byline">By <strong>the Privacy Plain English Team</strong> · Last updated September 2026</p>
+
+        <p class="intro-hook">We'd rather you hear this from us than figure it out from a URL: this site earns money. Here's exactly how, in plain English.</p>
+
+        <h2>What affiliate links are</h2>
+
+        <p>Some links on this site — especially in our VPN buying guides — are <strong>affiliate links</strong>. That means if you click one and sign up for a service, the company pays us a commission (typically a one-time payout per signup) at no extra cost to you. These programs are usually run through affiliate networks such as Impact.com, CJ Affiliate, or ShareASale, or directly by the VPN companies themselves.</p>
+
+        <p>To be concrete: if our travel guide links to a VPN provider and you buy a two-year plan through that link, we may earn a commission from that sale. The price you pay is the same as going direct.</p>
+
+        <h2>What this means for our recommendations</h2>
+
+        <p><strong>Commissions never determine our rankings.</strong> Our buying guides publish their evaluation criteria — audited no-logs policies, jurisdiction, kill switches, modern protocols — and providers are scored against those criteria whether or not they pay us. We regularly recommend limited free tiers that earn us nothing, and we publish articles (like our decision guide) whose entire point is talking some readers <em>out</em> of buying.</p>
+
+        <p>We also name the limits of every product category we cover. Trust is the business model here: a reader who learns when <em>not</em> to buy becomes the reader who trusts the recommendation when they do.</p>
+
+        <h2>Display ads</h2>
+
+        <p>You may see display advertisements on some pages, served through an ad network (currently planned: Mediavine Journey). These ads are selected by the network, not by us, and we don't endorse the products advertised. If an ad ever contradicts our editorial content, the content wins — tell us and we'll look into it.</p>
+
+        <h2>Sponsorships and digital products</h2>
+
+        <p>We occasionally accept sponsorships from privacy-focused companies (password managers, encrypted email services) and sell our own digital products, such as privacy setup checklists. We only work with products we would review honestly, and every sponsored placement is labeled as sponsored. Nothing on this site is a paid review disguised as editorial.</p>
+
+        <h2>Contact</h2>
+
+        <p>Questions about any of this — a link you think is mislabeled, a recommendation you want to challenge, a correction to our criteria? We want to hear it. Email us at <strong>hello@privacyplainenglish.com</strong> and a human on the Privacy Plain English team will reply.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="articles/vpn-explained-for-beginners.html">VPN Explainer</a></li>
+            <li><a href="articles/best-vpn-for-travel.html">Travel VPN Guide</a></li>
+            <li><a href="disclosure.html">Affiliate Disclosure</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p class="footer-note">Privacy Plain English may earn commissions from some links on this site. It never affects what we recommend. Read our <a href="disclosure.html">full disclosure</a>.</p>
+        </div>
+      </div>
+      <p class="footer-note">© 2026 Privacy Plain English. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var nav = document.getElementById('primaryNav');
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    })();
+  </script>
+</body>
+</html>
