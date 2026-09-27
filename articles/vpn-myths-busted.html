@@ -9,10 +9,11 @@
   <meta property="og:title" content="7 VPN Myths Beginners Believe (Busted With Evidence)">
   <meta property="og:description" content="Anonymity, incognito mode, 'military-grade encryption,' free VPNs — seven myths busted with evidence, plus what to actually do instead.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://vpn-privacy.pages.dev/articles/vpn-myths-busted.html">
+  <meta property="og:url" content="https://vpn-privacy-site.pages.dev/articles/vpn-myths-busted.html">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="../index.html" aria-label="Privacy Plain English — home">
@@ -38,7 +39,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <div class="wrap">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">← Home</a></nav>
       <article class="article-body">
@@ -52,7 +53,7 @@
 
         <p><strong>Verdict: False.</strong> A VPN hides your IP address from websites and your browsing destinations from your ISP. That's it. The moment you log into Gmail, Facebook, Amazon, or any account, that service knows exactly who you are — your login identifies you, not your IP address. Advertisers also track you through cookies and browser fingerprinting, which a VPN doesn't touch.</p>
 
-        <p><strong>Kernel of truth:</strong> your IP address <em>is</em> one identifier among many, and hiding it does meaningfully reduce what your ISP and casual snoopers can see. Real anonymity requires a whole system — separate accounts, hardened browsers, disciplined habits. A VPN is one ingredient, not the recipe.</p>
+        <p><strong>Kernel of truth:</strong> <a href="what-is-an-ip-address.html">your IP address</a> <em>is</em> one identifier among many, and hiding it does meaningfully reduce what your ISP and casual snoopers can see. Real anonymity requires a whole system — separate accounts, hardened browsers, disciplined habits. A VPN is one ingredient, not the recipe.</p>
 
         <h2>Myth 2: Incognito Mode + VPN = Invisible</h2>
 
@@ -158,10 +159,26 @@
     (function () {
       var toggle = document.getElementById('navToggle');
       var nav = document.getElementById('primaryNav');
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
+      function setOpen(open) {
+        nav.classList.toggle('open', open);
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      toggle.addEventListener('click', function () {
+        setOpen(!nav.classList.contains('open'));
+      });
+      // Close the menu after choosing a link (mobile) so readers land on content.
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          setOpen(false);
+        }
+      });
+      // Escape closes the open menu and returns focus to the toggle.
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          setOpen(false);
+          toggle.focus();
+        }
       });
     })();
   </script>
