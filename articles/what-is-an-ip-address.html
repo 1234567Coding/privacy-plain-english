@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- MEDIVAVINE/JOURNEY: paste ad network script here -->
+  <title>What Is an IP Address? A Plain-English Guide (2026) | Privacy Plain English</title>
+  <meta name="description" content="What is an IP address? A plain-English explainer: public vs. private IPs, IPv4 vs. IPv6, what your address reveals about you, and why VPNs change it.">
+  <meta property="og:title" content="What Is an IP Address? A Plain-English Guide (2026)">
+  <meta property="og:description" content="The 5-minute plain-English version: what your IP address is, what it reveals, and why a VPN changes it. No jargon, no hype.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://vpn-privacy-site.pages.dev/articles/what-is-an-ip-address.html">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="Privacy Plain English — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" role="img" aria-label="Privacy Plain English logo: a shield with a keyhole">
+          <path d="M16 2 L28 7 V15 C28 23 22 28.5 16 30 C10 28.5 4 23 4 15 V7 Z" fill="#0e7c86"/>
+          <path d="M16 5 L25 9 V15 C25 21 20.5 25.5 16 27 C11.5 25.5 7 21 7 15 V9 Z" fill="#ffffff"/>
+          <circle cx="16" cy="14" r="3.5" fill="#0e7c86"/>
+          <rect x="14.7" y="16.5" width="2.6" height="6" rx="1" fill="#0e7c86"/>
+        </svg>
+        <span class="brand-name">Privacy Plain English<small>Privacy tools explained in plain English</small></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">☰ Menu</button>
+      <nav class="site-nav" id="primaryNav" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="vpn-explained-for-beginners.html">VPN Basics</a></li>
+          <li><a href="do-i-need-a-vpn.html">Do I Need One?</a></li>
+          <li><a href="free-vs-paid-vpns.html">Free vs Paid</a></li>
+          <li><a href="how-to-set-up-a-vpn.html">Setup Guide</a></li>
+          <li><a href="../disclosure.html">Disclosure</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">← Home</a> <span aria-hidden="true">/</span> <span aria-current="page">VPN Fundamentals</span></nav>
+      <article class="article-body">
+        <h1>What Is an IP Address? The 5-Minute Plain-English Version</h1>
+        <p class="byline">By Privacy Plain English Team &middot; Published September 27, 2026 &middot; 7 min read</p>
+        <p class="affiliate-notice">Quick note on how we stay honest: this site may earn commissions from some VPN providers linked in our guides. It never affects what we recommend — <a href="../disclosure.html">read our full disclosure</a>.</p>
+
+        <p class="intro-hook">Every privacy article you read mentions your "IP address" like you already know what it is. Most people don't — and that's exactly the knowledge gap that fear-driven ads exploit. So let's fix that in five minutes: what an IP address is, what it reveals about you, and what it doesn't.</p>
+
+        <h2>The 30-Second Answer</h2>
+
+        <p>An IP address is your device's number on the internet. When your phone asks a website for a page, that website needs to know <em>where to send the answer</em> — your IP address is that "where." Every site you visit sees it, the same way every letter you receive had your street address on it.</p>
+
+        <p>It looks something like <code>203.0.113.42</code> (the older format) or <code>2001:db8::1</code> (the newer format). Your internet provider assigns it to you, it usually changes from time to time, and it reveals roughly where you are and which provider you use — but not your name, and not your exact address.</p>
+
+        <p>Here's the full picture, in plain English.</p>
+
+        <h2>The Mailing-Address Analogy (Why IPs Exist at All)</h2>
+
+        <p>Imagine the internet as the world's biggest post office. You (your device) send a letter ("show me this website") and the website sends a letter back ("here's the page"). For the reply to reach you, you need a return address. That return address is your IP address.</p>
+
+        <p>Without it, nothing could come back. There's no secret surveillance technology here — it's just addressing. The privacy part only starts with the follow-up question: <em>what can someone figure out from knowing your return address?</em> We'll get there. First, the two kinds of addresses.</p>
+
+        <h2>The Two Kinds: IPv4 and IPv6</h2>
+
+        <p>There are two formats, and you'll run into both:</p>
+
+        <h3>IPv4: the classic format</h3>
+
+        <p>Four groups of numbers separated by dots, each from 0 to 255. Example: <code>203.0.113.42</code>. This system was designed in the early 1980s, when "a billion internet-connected devices" sounded like science fiction. The total pool is about 4.3 billion addresses — and we ran out. The central global pool managed by IANA was exhausted in 2011, and the regional registries that hand addresses to internet providers have been squeezing their remaining supplies ever since. Today, an IPv4 address is a scarce resource; large blocks of them are bought and sold on a secondary market.</p>
+
+        <p>This scarcity is why your internet provider keeps reassigning addresses rather than giving everyone a permanent one (more on that below).</p>
+
+        <h3>IPv6: the new format</h3>
+
+        <p>To fix the shortage, engineers created a new system with 128-bit addresses — that's roughly 340 undecillion possible addresses (340 followed by 36 zeroes). They look like <code>2001:db8:0:0:0:0:0:1</code>, written in hexadecimal with colons instead of dots. There's no shortage here; IPv6 could give every grain of sand on Earth its own address pool and still have room.</p>
+
+        <p>Adoption has been slow but is now routine: by early 2026, roughly half of Google's global traffic arrived over IPv6, and APNIC (the regional registry for Asia-Pacific) estimated IPv6 usage around 43% worldwide. Your connection may use IPv6, IPv4, or both, and you'll never notice the difference. It's worth knowing because some privacy advice mentions one or the other — for your purposes, they're just two formats of the same idea: your device's number.</p>
+
+        <h2>Your Public IP vs. Your Private IP</h2>
+
+        <p>Here's the part that confuses people, because you actually have <em>two</em> addresses:</p>
+
+        <ul>
+          <li><strong>Your public IP</strong> is the one the internet sees. Your internet provider assigns it to your router (the box your provider gave you). When you visit a website, this is the address the website records.</li>
+          <li><strong>Your private IP</strong> is the one your router assigns to each device inside your home — your phone might be <code>192.168.1.5</code>, your laptop <code>192.168.1.6</code>. These addresses only work inside your house. Nobody on the internet can see them.</li>
+        </ul>
+
+        <p>Your router translates between the two, a trick called NAT (network address translation). Think of it like an office building: the building has one street address (your public IP), and each office has an internal room number (your private IP). Mail to "Room 5" only makes sense once it's inside the building.</p>
+
+        <p>This matters for two reasons. First, when privacy guides say "a VPN hides your IP address," they mean your <em>public</em> IP — the one websites actually see. Second, when you Google "what is my IP," the answer is your public IP. Your private one never leaves your home.</p>
+
+        <h2>What Your IP Address Actually Reveals</h2>
+
+        <p>Let's separate fact from ad copy. From your public IP address, a website or advertiser can determine:</p>
+
+        <ul>
+          <li><strong>Your approximate location</strong> — usually the right city or region, sometimes a neighboring one. IP-based location is notoriously fuzzy: databases map ranges of addresses to areas, and the result can be off by tens of miles. It cannot pinpoint your house.</li>
+          <li><strong>Your internet provider</strong> — the name of the company (Comcast, BT, Jio, etc.), because providers own known blocks of addresses.</li>
+          <li><strong>Your connection type</strong> — sometimes whether you're on residential broadband, a mobile network, or a corporate connection.</li>
+        </ul>
+
+        <p>What it does <em>not</em> contain: your name, your street address, your phone number, or anything about what's on your device. The address itself is just a number. The scarier link — connecting that number to your identity — exists in exactly one place: your internet provider's records. Your ISP knows which customer had which address at which time. That's why <a href="do-i-need-a-vpn.html">limiting what your ISP can see</a> is a legitimate privacy concern, and also why a warrant or legal process (not a random website) is how those records get opened.</p>
+
+        <div class="callout">
+          <p><strong>The key sentence:</strong> Your IP address tells websites <em>where-ish you are and who connects you</em>. It doesn't tell them <em>who you are</em> — until it's combined with something else (a login, a cookie, a purchase).</p>
+        </div>
+
+        <h2>Can Your IP Address Change? (Usually, Yes)</h2>
+
+        <p>For most home and phone users, your public IP address is <strong>dynamic</strong> — your provider lends it to you temporarily and can reassign it. Common triggers:</p>
+
+        <ul>
+          <li>Restarting your router (it often grabs a new address when it reconnects).</li>
+          <li>The provider's automatic rotation, which happens on a schedule measured in days or weeks.</li>
+          <li>On a phone, switching between Wi-Fi and mobile data gives you a different address each time. Mobile carriers also pack many customers behind shared addresses, so your mobile IP may be shared with strangers at the same moment.</li>
+        </ul>
+
+        <p>Businesses sometimes pay for a <strong>static</strong> IP that never changes — useful for running servers, pointless for regular browsing. And no, restarting your router to "get a fresh identity" is not a privacy strategy: trackers don't rely on your IP alone, and your ISP's records still link every address you ever had to you.</p>
+
+        <h3>How to see your own IP address</h3>
+
+        <p>Curious? The easiest way: open a search engine and type "what is my ip" — the first result will show your public address. (And if you want to check whether it's the one you expect after doing something privacy-related — like connecting a VPN — that same search is how you verify it. Our <a href="how-to-set-up-a-vpn.html">10-minute VPN setup guide</a> walks through exactly that check.)</p>
+
+        <h2>What This Has to Do With VPNs</h2>
+
+        <p>Now the VPN connection should click into place. A VPN sits between your device and the internet:</p>
+
+        <ol>
+          <li>Your device connects to the VPN server (your traffic is encrypted in the tunnel).</li>
+          <li>The VPN server connects to the website <em>on your behalf</em>.</li>
+          <li>The website sees the VPN server's IP address — not yours.</li>
+        </ol>
+
+        <p>So "a VPN hides your IP address" really means: websites now see the VPN's address instead of the one your provider gave you. Your real address is hidden from the site, but the VPN company can still see it — which is exactly why <a href="vpn-explained-for-beginners.html">choosing a trustworthy provider</a> matters more than choosing a fast one.</p>
+
+        <p>And the limits still apply: a VPN changes your IP, but it doesn't stop websites from identifying you by your login, your cookies, or your browser's fingerprint. It's one tool, not a disguise. For the full picture of when a VPN helps and when it's theater, read <a href="do-i-need-a-vpn.html">our honest decision guide</a> — it talks some readers <em>out</em> of buying one.</p>
+
+        <h2>FAQ</h2>
+
+        <dl class="faq">
+          <dt>Can someone hack me if they know my IP address?</dt>
+          <dd>Almost certainly not, on its own. An IP address is a destination, not a doorway. Modern routers and firewalls drop unsolicited incoming connections, and your address alone gives an attacker nothing to log into. The realistic threats are the usual ones — phishing, weak passwords, unpatched software — not your IP being public knowledge. It <em>is</em> public knowledge: every site you visit already has it.</dd>
+
+          <dt>Does incognito mode hide my IP address?</dt>
+          <dd>No. Incognito mode only stops your browser from saving history, cookies, and form data on your device. Your IP address is visible to every site you visit, in incognito or not. For the full breakdown, see our article on <a href="vpn-myths-busted.html">7 VPN myths beginners believe</a>.</dd>
+
+          <dt>Should I hide my IP address?</dt>
+          <dd>It depends on <em>why</em>. If you're on hotel or airport Wi-Fi and want to keep local snoopers out of your business, a VPN that masks your IP is a genuine improvement. If you just feel uneasy that websites "know your number" — every website you've ever visited has known it, and nothing bad happened, because an IP alone isn't an identity. Hide it for the right reasons, not because an ad scared you.</dd>
+
+          <dt>Is my IP address "personal data"?</dt>
+          <dd>Under privacy laws like the EU's GDPR, an IP address can count as personal data because it can be combined with other records to identify someone. Practically speaking, treat it as semi-private: don't post it publicly (it can invite targeted annoyance like DDoS attacks if you game or stream), but don't lose sleep over the fact that websites can see it.</dd>
+
+          <dt>Do I have an IPv6 address?</dt>
+          <dd>Possibly! Many providers now assign both. Search "what is my ip" and if the result is long and full of colons, that's IPv6. You don't need to do anything about it — your devices handle both formats automatically.</dd>
+        </dl>
+
+        <div class="keep-reading">
+          <h2>Keep reading</h2>
+          <ul>
+            <li><a href="vpn-explained-for-beginners.html">VPNs Explained for Beginners: What They Do, What They Don't, and How to Choose One</a></li>
+            <li><a href="do-i-need-a-vpn.html">Do I Actually Need a VPN? An Honest Decision Guide</a></li>
+            <li><a href="free-vs-paid-vpns.html">Free VPNs vs. Paid VPNs: Where the Free Ones Make Their Money</a></li>
+            <li><a href="vpn-myths-busted.html">7 VPN Myths Beginners Believe (Busted With Evidence)</a></li>
+            <li><a href="how-to-set-up-a-vpn.html">How to Set Up a VPN in 10 Minutes (With Pictures)</a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="vpn-explained-for-beginners.html">VPN Explainer</a></li>
+            <li><a href="best-vpn-for-travel.html">Travel VPN Guide</a></li>
+            <li><a href="../disclosure.html">Affiliate Disclosure</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p class="footer-note">Privacy Plain English may earn commissions from some links on this site. It never affects what we recommend. Read our <a href="../disclosure.html">full disclosure</a>.</p>
+        </div>
+      </div>
+      <p class="footer-note">© 2026 Privacy Plain English. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var nav = document.getElementById('primaryNav');
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    })();
+  </script>
+</body>
+</html>
